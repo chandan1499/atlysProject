@@ -1,0 +1,47 @@
+.homeContainer {
+    @apply min-h-screen my-12 w-[700px]
+}
+
+.userDetailTag {
+    @apply text-primaryText
+}
+
+.profileSubHeader {
+    @apply my-4 text-secondaryText text-base
+}
+
+.postContainer {
+    @apply bg-[#27292D] border-solid border-2 border-[#35373B] rounded-md mt-12 p-4
+}
+
+.postHeader {
+    @apply text-primaryText text-[18px] font-medium mb-3
+}
+
+.postInput {
+    @apply bg-[#14161f] min-w-full p-4 rounded-lg focus:outline-none text-base text-secondaryText placeholder:text-secondaryText
+}
+
+.postBtnContainer {
+    @apply w-full flex flex-row-reverse
+}
+
+.postBtn {
+    @apply w-32 mt-3
+}
+
+.postListContainer {
+    @apply bg-[#27292D] border-solid border-2 border-[#35373B] rounded-md mt-4 p-4
+}
+
+.userInfoContainer {
+    @apply flex mb-4
+}
+
+.userImg {
+    @apply w-12 h-12 rounded-full mr-4
+}
+
+.commentsBox {
+    @apply text-secondaryText mt-3
+}

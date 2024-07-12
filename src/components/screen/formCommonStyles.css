@@ -1,5 +1,5 @@
 .container {
-    @apply min-h-[400px] w-[450px] bg-[#27292D] p-6 rounded-lg border-2 border-[#969696] text-white;   
+    @apply min-h-[400px] w-[450px] bg-[#27292D] p-6 rounded-lg border-2 border-[#969696] text-white;
 }
 
 .formHeading {

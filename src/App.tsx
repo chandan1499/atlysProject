@@ -8,10 +8,10 @@ function App() {
     <div className='bg-[#14161f] min-h-screen flex justify-center items-center text-white'>
       <Router>
       <Routes>
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/HomePage" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="*" element={<LoginPage />} />
+        <Route path="*" element={<HomePage />} />
       </Routes>
     </Router>
     </div>

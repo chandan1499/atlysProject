@@ -7,6 +7,7 @@ import {
   SubmitHandler,
   useForm,
 } from "react-hook-form";
+import { useNavigate } from 'react-router-dom';
 
 interface formValuesType {
   emailOrUsername: string;
@@ -14,12 +15,18 @@ interface formValuesType {
 }
 
 export const LoginPage = () => {
+  const navigate = useNavigate()
   const methods = useForm<formValuesType>({
     defaultValues: { emailOrUsername: "", password: "" },
   });
 
+  const handleRouteChange = (path: string) => {
+    navigate(path);
+  };
+
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     console.log("login form", data);
+    handleRouteChange("/home");
   };
 
   return (
@@ -51,7 +58,7 @@ export const LoginPage = () => {
             type="submit"
           />
         </div>
-        <h4 className="nonRegisterText">
+        <h4 className="nonRegisterText" onClick={() => handleRouteChange('/register')}>
           Not registered yet?{" "}
           <span className="nonRegisterTextHighlight">Register →</span>
         </h4>
