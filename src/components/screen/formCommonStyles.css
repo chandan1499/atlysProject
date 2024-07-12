@@ -1,0 +1,23 @@
+.container {
+    @apply min-h-[400px] w-[450px] bg-[#27292D] p-6 rounded-lg border-2 border-[#969696] text-white;   
+}
+
+.formHeading {
+    @apply text-center text-[#6B6C70]
+}
+
+.formSubHeading {
+    @apply text-center text-white font-bold mb-10
+}
+
+.nonRegisterText {
+    @apply text-[#7F8084] mt-2 hover:cursor-pointer
+}
+
+.nonRegisterTextHighlight {
+    @apply text-gray-300
+}
+
+.passwordBox {
+    @apply flex justify-between
+}

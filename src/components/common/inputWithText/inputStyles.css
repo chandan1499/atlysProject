@@ -1,0 +1,8 @@
+.inputText {
+    @apply text-gray-300 mt-3 text-sm;
+}
+
+.inputField {
+    @apply text-white w-full h-12 bg-inherit p-4 border-solid border-2 border-[#7F8084] rounded-md my-2 focus:outline-none;
+}
+  
