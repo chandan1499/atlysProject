@@ -26,7 +26,7 @@ const InputWithText = ({
         className="inputField"
         type={type ?? "text"}
         placeholder={placeholder ?? label}
-        {...register(name)}
+        {...register(name, {required: true})}
       />
     </>
   );
