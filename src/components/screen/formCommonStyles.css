@@ -10,6 +10,10 @@
     @apply text-center text-white font-bold mb-10
 }
 
+.crossIconBox {
+    @apply relative top-0 right-[32px] min-w-8 min-h-8 max-w-8 max-h-8 bg-[#131319] flex items-center justify-center rounded-full cursor-pointer
+}
+
 .nonRegisterText {
     @apply text-[#7F8084] mt-2 hover:cursor-pointer
 }

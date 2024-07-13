@@ -26,3 +26,9 @@ export const calculateTimeAgo = (postTime: string): string => {
         return `${elapsedSeconds} second${elapsedSeconds === 1 ? '' : 's'} ago`;
     }
 }
+
+export enum ShowPageEnum {
+    HOME = 'home',
+    LOGIN = 'login',
+    REGISTER = 'register'
+}

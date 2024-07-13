@@ -8,20 +8,34 @@ import {
   useForm,
 } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { CrossSvg } from "../../common/crossIcon/CrossSvg";
+import { ShowPageEnum } from "../home/utils";
+import { useMyContext } from "../../../ContextProvider";
 
 interface formValuesType {
   emailOrUsername: string;
   password: string;
 }
 
-export const RegisterPage = () => {
+export const RegisterPage = ({ source }: { source?: string }) => {
   const navigate = useNavigate();
+  const { setHomeState } = useMyContext();
   const methods = useForm<formValuesType>({
     defaultValues: { emailOrUsername: "", password: "" },
   });
 
   const handleRouteChange = (path: string) => {
-    navigate(path);
+    if (source === "home") {
+      switch (path) {
+        case "/login":
+          setHomeState(ShowPageEnum.LOGIN);
+          break;
+        default:
+          setHomeState(ShowPageEnum.HOME);
+      }
+    } else {
+      navigate(path);
+    }
   };
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
@@ -31,33 +45,45 @@ export const RegisterPage = () => {
 
   return (
     <FormProvider {...methods}>
-      <form className="container" onSubmit={methods.handleSubmit(onSubmit)}>
-        <h3 className="formHeading">SIGN UP</h3>
-        <h2 className="formSubHeading">Create an account to continue</h2>
-        <InputWithText
-          label="Email"
-          placeholder="Enter your email"
-          name="email"
-        />
-        <InputWithText
-          label="Username"
-          placeholder="Choose a preferred username"
-          name="userName"
-        />
-        <InputWithText
-          label="Password"
-          placeholder="Choose a strong password"
-          name="password"
-          type="password"
-        />
-        <div className="mt-3">
-          <Button text="Continue" type="submit" />
+      <div className="container">
+        <div className="flex justify-around">
+          <div className="min-w-full">
+            <h3 className="formHeading">SIGN UP</h3>
+            <h2 className="formSubHeading">Create an account to continue</h2>
+          </div>
+          {source === "home" && (
+            <CrossSvg onClick={() => handleRouteChange("/home")} />
+          )}
         </div>
-        <h4 className="nonRegisterText" onClick={() => handleRouteChange('/login')}>
-          Already have an account?{" "}
-          <span className="nonRegisterTextHighlight">Login →</span>
-        </h4>
-      </form>
+        <form onSubmit={methods.handleSubmit(onSubmit)}>
+          <InputWithText
+            label="Email"
+            placeholder="Enter your email"
+            name="email"
+          />
+          <InputWithText
+            label="Username"
+            placeholder="Choose a preferred username"
+            name="userName"
+          />
+          <InputWithText
+            label="Password"
+            placeholder="Choose a strong password"
+            name="password"
+            type="password"
+          />
+          <div className="mt-3">
+            <Button text="Continue" type="submit" />
+          </div>
+          <h4
+            className="nonRegisterText"
+            onClick={() => handleRouteChange("/login")}
+          >
+            Already have an account?{" "}
+            <span className="nonRegisterTextHighlight">Login →</span>
+          </h4>
+        </form>
+      </div>
     </FormProvider>
   );
 };
