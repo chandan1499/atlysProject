@@ -18,8 +18,28 @@
     @apply text-primaryText text-[18px] font-medium mb-3
 }
 
-.postInput {
-    @apply bg-[#14161f] min-w-full p-4 rounded-lg focus:outline-none text-base text-secondaryText placeholder:text-secondaryText
+.postInfoBox {
+    @apply flex bg-[#14161f] rounded-lg p-4
+}
+
+.reactionBox {
+    @apply min-w-12 min-h-12 bg-[#27292D] rounded-full mr-4 flex items-center justify-center cursor-pointer
+}
+
+.textAreaInput {
+    @apply bg-inherit w-full rounded-r-lg focus:outline-none text-base text-secondaryText placeholder:text-secondaryText
+}
+
+.postContentBox {
+    @apply flex w-full p-4 bg-[#14161f] rounded-lg
+}
+
+.postListReactionBox {
+    @apply min-w-12 min-h-12 bg-[#27292D] mr-4 rounded-full flex items-center justify-center max-w-12 max-h-12
+}
+
+.postListContent {
+    @apply bg-inherit w-full rounded-r-lg focus:outline-none text-base text-secondaryText placeholder:text-secondaryText
 }
 
 .postBtnContainer {
@@ -52,4 +72,20 @@
 
 .homeBlur {
     @apply overflow-hidden filter blur-sm 
+}
+
+.tooltipContainer {
+    @apply relative
+}
+
+.tooltip {
+    @apply absolute left-[0%] top-[90%] mt-2 w-[216px] p-2 bg-gray-800 text-white text-sm rounded rounded-tl-none hidden group-hover:inline transition-opacity duration-200
+}
+
+.reactionsContainer {
+    @apply flex flex-wrap w-full
+}
+
+.reactionEmoji {
+    @apply w-10 h-10 text-2xl text-center cursor-pointer
 }

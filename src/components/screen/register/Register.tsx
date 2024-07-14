@@ -45,44 +45,46 @@ export const RegisterPage = ({ source }: { source?: string }) => {
 
   return (
     <FormProvider {...methods}>
-      <div className="container">
-        <div className="flex justify-around">
-          <div className="min-w-full">
-            <h3 className="formHeading">SIGN UP</h3>
-            <h2 className="formSubHeading">Create an account to continue</h2>
+      <div className="containerBorder">
+        <div className="container">
+          <div className="flex justify-around">
+            <div className="min-w-full">
+              <h3 className="formHeading">SIGN UP</h3>
+              <h2 className="formSubHeading">Create an account to continue</h2>
+            </div>
+            {source === "home" && (
+              <CrossSvg onClick={() => handleRouteChange("/home")} />
+            )}
           </div>
-          {source === "home" && (
-            <CrossSvg onClick={() => handleRouteChange("/home")} />
-          )}
+          <form onSubmit={methods.handleSubmit(onSubmit)}>
+            <InputWithText
+              label="Email"
+              placeholder="Enter your email"
+              name="email"
+            />
+            <InputWithText
+              label="Username"
+              placeholder="Choose a preferred username"
+              name="userName"
+            />
+            <InputWithText
+              label="Password"
+              placeholder="Choose a strong password"
+              name="password"
+              type="password"
+            />
+            <div className="mt-3">
+              <Button text="Continue" type="submit" />
+            </div>
+            <h4
+              className="nonRegisterText"
+              onClick={() => handleRouteChange("/login")}
+            >
+              Already have an account?{" "}
+              <span className="nonRegisterTextHighlight">Login →</span>
+            </h4>
+          </form>
         </div>
-        <form onSubmit={methods.handleSubmit(onSubmit)}>
-          <InputWithText
-            label="Email"
-            placeholder="Enter your email"
-            name="email"
-          />
-          <InputWithText
-            label="Username"
-            placeholder="Choose a preferred username"
-            name="userName"
-          />
-          <InputWithText
-            label="Password"
-            placeholder="Choose a strong password"
-            name="password"
-            type="password"
-          />
-          <div className="mt-3">
-            <Button text="Continue" type="submit" />
-          </div>
-          <h4
-            className="nonRegisterText"
-            onClick={() => handleRouteChange("/login")}
-          >
-            Already have an account?{" "}
-            <span className="nonRegisterTextHighlight">Login →</span>
-          </h4>
-        </form>
       </div>
     </FormProvider>
   );

@@ -4,6 +4,7 @@ export interface PostContainerProps {
     postTime: string;
     postContent: string;
     commentsCount: number;
+    reactionSelected: string;
 }
 
 export const calculateTimeAgo = (postTime: string): string => {
