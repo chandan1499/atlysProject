@@ -10,7 +10,7 @@ Before you begin, ensure you have met the following requirements:
 ## Getting Started
 Follow below commands
 ```
-$ git clone https://github.com/your_username/your_project.git
+$ git clone https://github.com/chandan1499/atlysProject.git
 $ cd atlysProject
 $ yarn install
 $ yarn start
